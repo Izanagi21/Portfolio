@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Jaymark Talento — IT student focused on frontend and mobile app development.">
   <meta name="theme-color" content="#2563eb">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="icon" href="assets/images/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,33 +17,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: "#eff6ff",
-              100: "#dbeafe",
-              500: "#3b82f6",
-              600: "#2563eb",
-              700: "#1d4ed8"
-            }
-          },
-          fontFamily: {
-            sans: ["Inter", "system-ui", "sans-serif"]
-          }
-        }
-      }
-    };
-  </script>
   <link rel="stylesheet" href="css/style.css">
 
   <title>Jaymark Talento | Portfolio</title>
 </head>
-<body class="bg-white text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+<body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header" id="site-header">
@@ -114,7 +95,7 @@
         <span class="decor-orb decor-orb-two" aria-hidden="true"></span>
         <div class="portrait-blob">
           <div class="profile-photo-slot" id="profile-photo-slot">
-            <img src="assets/images/profile-photo.png" alt="Portrait of Jaymark Talento">
+            <img src="assets/images/profile-photo.png" alt="Portrait of Jaymark Talento" width="1122" height="1402" fetchpriority="high">
           </div>
         </div>
       </div>
@@ -354,7 +335,7 @@
 
           <article class="swiper-slide project-card">
             <div class="project-preview preview-rentags">
-              <img src="assets/images/projects/rentags.png" alt="Rentags mobile application logo">
+              <img src="assets/images/projects/rentags.png" alt="Rentags mobile application logo" loading="lazy">
             </div>
             <div class="project-body">
               <h3>Rentags: A Mobile Application for Apartment Seekers in Tagaytay</h3>

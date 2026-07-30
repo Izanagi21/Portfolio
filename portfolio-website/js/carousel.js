@@ -5,6 +5,8 @@
     slidesPerView: 1,
     spaceBetween: 16,
     grabCursor: true,
+    watchOverflow: true,
+    touchStartPreventDefault: false,
     keyboard: {
       enabled: true
     },

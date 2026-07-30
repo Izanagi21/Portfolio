@@ -34,6 +34,17 @@
     menuToggle.setAttribute("aria-label", willOpen ? "Close navigation" : "Open navigation");
   });
 
+  document.addEventListener("click", (event) => {
+    if (mobileNav?.hidden || header?.contains(event.target)) return;
+    closeMobileNavigation();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || mobileNav?.hidden) return;
+    closeMobileNavigation();
+    menuToggle?.focus();
+  });
+
   navLinks.forEach((link) => {
     link.addEventListener("click", closeMobileNavigation);
   });
