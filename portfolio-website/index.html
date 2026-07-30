@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jaymark Talento — IT student focused on frontend and mobile app development.">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="assets/images/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: "#eff6ff",
+              100: "#dbeafe",
+              500: "#3b82f6",
+              600: "#2563eb",
+              700: "#1d4ed8"
+            }
+          },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Jaymark Talento | Portfolio</title>
+</head>
+<body class="bg-white text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav-shell" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Jaymark Talento home">
+        <span class="brand-mark" aria-hidden="true">JT</span>
+        <span>Jaymark Talento</span>
+      </a>
+
+      <div class="desktop-nav" id="desktop-nav">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#qualification">Qualification</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+          <i data-lucide="sun" class="theme-icon theme-icon-light"></i>
+          <i data-lucide="moon" class="theme-icon theme-icon-dark"></i>
+        </button>
+        <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#qualification">Qualification</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section-shell" id="home">
+      <div class="hero-copy" data-aos="fade-up">
+        <span class="eyebrow-pill">👋 Hi, I’m</span>
+        <h1>Jaymark Talento</h1>
+        <p class="hero-role">IT Student</p>
+        <p class="hero-summary">Building practical, user-friendly solutions through technology and creativity.</p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contact">
+            <i data-lucide="send"></i>
+            Message Me
+          </a>
+
+          <a class="button button-secondary" id="resume-button" href="assets/resume/Talento_Resume.pdf" download="Talento_Resume.pdf">
+            <i data-lucide="download"></i>
+            Download Resume
+          </a>
+        </div>
+
+        <div class="social-links" aria-label="Social links">
+          <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="X / Twitter"><i data-lucide="twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-aos="zoom-in" data-aos-delay="120" aria-label="Profile photo area">
+        <span class="decor-dots" aria-hidden="true"></span>
+        <span class="decor-orb decor-orb-one" aria-hidden="true"></span>
+        <span class="decor-orb decor-orb-two" aria-hidden="true"></span>
+        <div class="portrait-blob">
+          <div class="profile-photo-slot" id="profile-photo-slot">
+            <img src="assets/images/profile-photo.png" alt="Portrait of Jaymark Talento">
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#about">
+        <span>Scroll Down</span>
+        <i data-lucide="chevrons-down"></i>
+      </a>
+    </section>
+
+    <section class="content-section section-shell about-section" id="about">
+      <div class="about-art" data-aos="fade-right" aria-hidden="true">
+        <span class="about-orb about-orb-a"></span>
+        <span class="about-orb about-orb-b"></span>
+        <div class="laptop">
+          <div class="laptop-screen">
+            <i data-lucide="code-2"></i>
+          </div>
+          <div class="laptop-base"></div>
+        </div>
+        <span class="floating-card floating-card-one"><i data-lucide="braces"></i></span>
+        <span class="floating-card floating-card-two"><i data-lucide="database"></i></span>
+        <span class="floating-card floating-card-three"><i data-lucide="cpu"></i></span>
+      </div>
+
+      <div class="about-copy" data-aos="fade-left">
+        <div class="section-heading align-left">
+          <span>About Me</span>
+          <h2>About Me</h2>
+        </div>
+        <p>Motivated and dedicated BSIT student at City College of Tagaytay. I strive to become a Frontend Developer and Mobile App Developer.</p>
+
+        <blockquote>
+          <i data-lucide="quote"></i>
+          <p>Turning ideas into meaningful digital experiences, one line of code at a time.</p>
+        </blockquote>
+
+        <div class="stats-grid" aria-label="Portfolio statistics">
+          <article class="stat-card">
+            <span class="stat-icon blue"><i data-lucide="briefcase-business"></i></span>
+            <strong><span class="counter" data-target="3">0</span>+</strong>
+            <small>Years Experience</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon green"><i data-lucide="circle-check-big"></i></span>
+            <strong><span class="counter" data-target="12">0</span></strong>
+            <small>Completed Projects</small>
+          </article>
+          <article class="stat-card">
+            <span class="stat-icon violet"><i data-lucide="code-xml"></i></span>
+            <strong><span class="counter" data-target="5">0</span></strong>
+            <small>Programming Languages</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-shell" id="skills">
+      <div class="section-heading" data-aos="fade-up">
+        <span>My Expertise</span>
+        <h2>Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+        <article class="skill-card" data-aos="fade-up" data-aos-delay="0">
+          <h3><i data-lucide="code-xml"></i> Languages</h3>
+          <div class="skill-list">
+            <div class="skill-item" data-level="15">
+              <div class="skill-label"><span><i class="devicon-python-plain colored"></i>Python</span><b>15%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+            <div class="skill-item" data-level="15">
+              <div class="skill-label"><span><i class="devicon-java-plain colored"></i>Java</span><b>15%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+            <div class="skill-item" data-level="15">
+              <div class="skill-label"><span><i class="devicon-javascript-plain colored"></i>JavaScript</span><b>15%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+            <div class="skill-item" data-level="15">
+              <div class="skill-label"><span><i class="devicon-cplusplus-plain colored"></i>C++</span><b>15%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="skill-card" data-aos="fade-up" data-aos-delay="80">
+          <h3><i data-lucide="globe-2"></i> Web Development</h3>
+          <div class="skill-list">
+            <div class="skill-item" data-level="75">
+              <div class="skill-label"><span><i class="devicon-html5-plain colored"></i>HTML</span><b>75%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+            <div class="skill-item" data-level="70">
+              <div class="skill-label"><span><i class="devicon-css3-plain colored"></i>CSS</span><b>70%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+            <div class="skill-item" data-level="25">
+              <div class="skill-label"><span><i class="devicon-javascript-plain colored"></i>JavaScript</span><b>25%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+            <div class="skill-item" data-level="35">
+              <div class="skill-label"><span><i class="devicon-nodejs-plain colored"></i>Node.js</span><b>35%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="skill-card" data-aos="fade-up" data-aos-delay="160">
+          <h3><i data-lucide="box"></i> Frameworks</h3>
+          <div class="skill-list">
+            <div class="skill-item" data-level="45">
+              <div class="skill-label"><span><i class="devicon-react-original colored"></i>React Native</span><b>45%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+            <div class="skill-item" data-level="80">
+              <div class="skill-label"><span><i class="devicon-flutter-plain colored"></i>Flutter</span><b>80%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+            <div class="skill-item" data-level="55">
+              <div class="skill-label"><span><i class="devicon-tailwindcss-original colored"></i>Tailwind CSS</span><b>55%</b></div>
+              <div class="skill-track"><span class="skill-progress"></span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section qualification-section" id="qualification">
+      <div class="section-shell">
+        <div class="section-heading" data-aos="fade-up">
+          <span>Qualification</span>
+          <h2>Qualification</h2>
+        </div>
+
+        <div class="qualification-tabs" role="tablist" aria-label="Qualification categories" data-aos="fade-up">
+          <button class="qualification-tab active" id="education-tab" type="button" role="tab" aria-selected="true" aria-controls="education-panel" data-tab="education">
+            <i data-lucide="graduation-cap"></i> Education
+          </button>
+          <button class="qualification-tab" id="work-tab" type="button" role="tab" aria-selected="false" aria-controls="work-panel" data-tab="work">
+            <i data-lucide="briefcase-business"></i> Work
+          </button>
+        </div>
+
+        <div class="timeline-panel active" id="education-panel" role="tabpanel" aria-labelledby="education-tab">
+          <article class="timeline-item" data-aos="fade-up">
+            <time>2023 – Present</time>
+            <span class="timeline-dot"></span>
+            <div class="timeline-card">
+              <span class="timeline-icon"><i data-lucide="school"></i></span>
+              <div>
+                <h3>Bachelor of Science in Information Technology</h3>
+                <p>City College of Tagaytay</p>
+                <small>Focused on frontend development, mobile app development, and database systems.</small>
+              </div>
+              <span class="status in-progress">In Progress</span>
+            </div>
+          </article>
+          <article class="timeline-item" data-aos="fade-up">
+            <time>2021 – 2023</time>
+            <span class="timeline-dot"></span>
+            <div class="timeline-card">
+              <span class="timeline-icon"><i data-lucide="building-2"></i></span>
+              <div>
+                <h3>Senior High School</h3>
+                <p>ICT – Information Communication Technology</p>
+                <small>Tagaytay City National High School Integrated Senior High School</small>
+              </div>
+              <span class="status complete">Completed</span>
+            </div>
+          </article>
+          <article class="timeline-item" data-aos="fade-up">
+            <time>2017 – 2020</time>
+            <span class="timeline-dot"></span>
+            <div class="timeline-card">
+              <span class="timeline-icon"><i data-lucide="book-open"></i></span>
+              <div>
+                <h3>Junior High School</h3>
+                <p>Tagaytay City National High School Integrated Senior High School</p>
+              </div>
+              <span class="status complete">Completed</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="timeline-panel" id="work-panel" role="tabpanel" aria-labelledby="work-tab" hidden>
+          <article class="timeline-item">
+            <time>Present</time>
+            <span class="timeline-dot"></span>
+            <div class="timeline-card">
+              <span class="timeline-icon"><i data-lucide="laptop"></i></span>
+              <div>
+                <h3>Open to Opportunities</h3>
+                <p>Internships, freelance work, and junior developer roles</p>
+                <small>Add your professional experience here as your career grows.</small>
+              </div>
+              <span class="status in-progress">Available</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section section-shell projects-section" id="projects">
+      <div class="section-heading" data-aos="fade-up">
+        <span>Featured Projects</span>
+        <h2>Projects</h2>
+      </div>
+
+      <div class="swiper project-swiper" data-aos="fade-up">
+        <div class="swiper-wrapper">
+          <article class="swiper-slide project-card">
+            <div class="project-preview preview-portfolio" aria-hidden="true">
+              <i data-lucide="panels-top-left"></i>
+              <span>Portfolio</span>
+            </div>
+            <div class="project-body">
+              <h3>Portfolio Website</h3>
+              <p>Personal portfolio website built with HTML, Tailwind CSS, and vanilla JavaScript.</p>
+              <div class="project-tags"><span>HTML</span><span>Tailwind</span><span>JavaScript</span></div>
+              <a href="#">Visit <i data-lucide="external-link"></i></a>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-card">
+            <div class="project-preview preview-student" aria-hidden="true">
+              <i data-lucide="users-round"></i>
+              <span>Student Hub</span>
+            </div>
+            <div class="project-body">
+              <h3>Student Management System</h3>
+              <p>A full-stack system to manage student records, courses, attendance, and grades.</p>
+              <div class="project-tags"><span>Node.js</span><span>Database</span><span>UI</span></div>
+              <a href="#">Visit <i data-lucide="external-link"></i></a>
+            </div>
+          </article>
+
+          <article class="swiper-slide project-card">
+            <div class="project-preview preview-rentags">
+              <img src="assets/images/projects/rentags.png" alt="Rentags mobile application logo">
+            </div>
+            <div class="project-body">
+              <h3>Rentags: A Mobile Application for Apartment Seekers in Tagaytay</h3>
+              <p>A mobile application that helps apartment seekers easily discover and explore available rentals across Tagaytay.</p>
+              <div class="project-tags"><span>Flutter</span><span>Supabase</span></div>
+              <a href="#">Visit <i data-lucide="external-link"></i></a>
+            </div>
+          </article>
+
+        </div>
+        <button class="swiper-button-prev" type="button" aria-label="Previous project"></button>
+        <button class="swiper-button-next" type="button" aria-label="Next project"></button>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section class="content-section contact-section" id="contact">
+      <div class="section-shell">
+        <div class="section-heading" data-aos="fade-up">
+          <span>Get In Touch</span>
+          <h2>Contact Me</h2>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-details" data-aos="fade-right">
+            <a class="contact-card" href="tel:+639213457698">
+              <span><i data-lucide="phone"></i></span>
+              <div><small>Phone</small><strong>+63 921 345 7698</strong></div>
+            </a>
+            <a class="contact-card" href="mailto:jmarktalento@gmail.com">
+              <span><i data-lucide="mail"></i></span>
+              <div><small>Email</small><strong>jmarktalento@gmail.com</strong></div>
+            </a>
+            <div class="contact-card">
+              <span><i data-lucide="map-pin"></i></span>
+              <div><small>Location</small><strong>Tagaytay, Philippines</strong></div>
+            </div>
+            <div class="contact-card">
+              <span><i data-lucide="clock-3"></i></span>
+              <div><small>Availability</small><strong>Open for Opportunities</strong></div>
+            </div>
+          </div>
+
+          <div class="map-card" data-aos="fade-up">
+            <iframe
+              title="Map showing Tagaytay, Philippines"
+              src="https://www.google.com/maps?q=Tagaytay%2C%20Philippines&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div>
+              <strong>Tagaytay, Philippines</strong>
+              <a href="https://maps.google.com/?q=Tagaytay,Philippines" target="_blank" rel="noopener">View on Google Maps <i data-lucide="external-link"></i></a>
+            </div>
+          </div>
+
+          <!-- Add your Formspree endpoint to the action attribute when ready. -->
+          <form class="contact-form" id="contact-form" action="" method="POST" data-aos="fade-left" novalidate>
+            <div class="form-row">
+              <label>
+                <span class="sr-only">Your name</span>
+                <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+              </label>
+              <label>
+                <span class="sr-only">Your email</span>
+                <input type="email" name="email" placeholder="Your Email" autocomplete="email" required>
+              </label>
+            </div>
+            <label>
+              <span class="sr-only">Subject</span>
+              <input type="text" name="subject" placeholder="Subject" required>
+            </label>
+            <label>
+              <span class="sr-only">Your message</span>
+              <textarea name="message" placeholder="Your Message" required></textarea>
+            </label>
+            <button class="button button-primary submit-button" type="submit">
+              <i data-lucide="send"></i>
+              Send Message
+            </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid section-shell">
+      <div>
+        <a class="brand" href="#home"><span class="brand-mark">JT</span><span>Jaymark Talento</span></a>
+        <p>IT student focused on frontend development, mobile app development, and practical digital solutions.</p>
+      </div>
+      <div>
+        <h2>Quick Links</h2>
+        <div class="footer-links">
+          <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
+          <a href="#qualification">Qualification</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h2>Connect With Me</h2>
+        <div class="social-links">
+          <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="#" aria-label="X / Twitter"><i data-lucide="twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        </div>
+        <p>© <span id="current-year"></span> Jaymark Talento. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/scrollReveal.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/skillsBar.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/contactForm.js"></script>
+</body>
+</html>
