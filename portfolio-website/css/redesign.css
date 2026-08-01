@@ -39,6 +39,7 @@ html.dark {
 }
 
 body.portfolio-redesign {
+  min-width: 0;
   color: var(--ink);
   font-family: var(--body-font);
   background:
@@ -1396,17 +1397,17 @@ a.contact-card:hover {
 
 @media (max-width: 390px) {
   .hero h1 {
-    font-size: clamp(3rem, 17vw, 4rem);
+    font-size: clamp(2.25rem, 13vw, 3.2rem);
   }
 
   .hero-meta {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
   }
 
   .hero-meta > div + div {
-    padding-left: 0;
-    border-left: 0;
+    padding-left: 0.8rem;
+    border-left: 1px solid var(--line);
   }
 
   .hero-visual {
@@ -1422,6 +1423,357 @@ a.contact-card:hover {
 
   .signal-card-location {
     bottom: 4%;
+  }
+}
+
+/* Phone-first refinement: compact hierarchy, comfortable touch targets, no clipped type. */
+
+@media (max-width: 620px) {
+  html {
+    scroll-padding-top: 88px;
+  }
+
+  main section[id] {
+    scroll-margin-top: calc(88px + env(safe-area-inset-top));
+  }
+
+  .site-header {
+    padding-right: calc(0.55rem + env(safe-area-inset-right));
+    padding-left: calc(0.55rem + env(safe-area-inset-left));
+  }
+
+  .nav-shell {
+    min-height: 58px;
+    padding: 0.4rem 0.45rem 0.4rem 0.75rem;
+  }
+
+  .mobile-nav {
+    margin-top: 0.4rem;
+    padding: 0.45rem;
+    border-radius: 12px;
+    gap: 0.1rem;
+  }
+
+  .mobile-nav .nav-link {
+    min-height: 44px;
+    padding: 0.65rem 0.8rem;
+    border-radius: 8px;
+  }
+
+  .brand {
+    gap: 0.5rem;
+    font-size: 0.72rem;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    font-size: 0.75rem;
+  }
+
+  .nav-actions {
+    gap: 0.35rem;
+  }
+
+  .icon-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero {
+    padding-top: calc(7rem + env(safe-area-inset-top));
+    padding-bottom: 4.5rem;
+    gap: 2rem;
+  }
+
+  .eyebrow-pill {
+    width: 100%;
+    align-items: flex-start;
+    font-size: 0.55rem;
+    line-height: 1.55;
+    letter-spacing: 0.065em;
+  }
+
+  .availability-dot {
+    margin-top: 0.2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.25rem, 13vw, 3.35rem);
+    line-height: 0.86;
+    letter-spacing: -0.06em;
+  }
+
+  .hero h1 .name-accent {
+    margin-left: 0.3rem;
+  }
+
+  .hero-role {
+    margin-top: 1.35rem;
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+
+  .hero-summary {
+    margin-top: 0.85rem;
+    font-size: 0.88rem;
+    line-height: 1.72;
+  }
+
+  .hero-actions {
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-actions .button {
+    min-height: 50px;
+  }
+
+  .social-links {
+    margin-top: 1rem;
+  }
+
+  .hero-meta {
+    margin-top: 1.25rem;
+  }
+
+  .hero-meta > div {
+    min-width: 0;
+    padding-right: 0.75rem;
+  }
+
+  .hero-meta dt {
+    font-size: 0.55rem;
+  }
+
+  .hero-meta dd {
+    font-size: 0.7rem;
+  }
+
+  .hero-visual {
+    min-height: 355px;
+  }
+
+  .portrait-blob {
+    width: min(260px, 78vw);
+    border-radius: 126px 126px 16px 16px;
+  }
+
+  .portrait-blob::before {
+    inset: 8px;
+    border-radius: 118px 118px 10px 10px;
+  }
+
+  .signal-ring-one {
+    width: 270px;
+    height: 270px;
+  }
+
+  .signal-ring-two {
+    width: 310px;
+    height: 310px;
+  }
+
+  .signal-grid {
+    inset: 2% 0 1%;
+    background-size: 28px 28px;
+  }
+
+  .signal-card {
+    max-width: 142px;
+    padding: 0.62rem 0.7rem;
+  }
+
+  .signal-card-status {
+    top: 5%;
+  }
+
+  .signal-card-location {
+    bottom: 3%;
+  }
+
+  .signal-card small {
+    font-size: 0.5rem;
+  }
+
+  .signal-card strong {
+    font-size: 0.6rem;
+  }
+
+  .visual-index,
+  .scroll-cue {
+    display: none;
+  }
+
+  .section-heading {
+    margin-bottom: 2rem;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2.15rem, 11vw, 3rem);
+  }
+
+  .about-section {
+    gap: 2rem;
+  }
+
+  .about-art {
+    min-height: 310px;
+  }
+
+  .about-copy > p {
+    font-size: 0.9rem;
+    line-height: 1.78;
+  }
+
+  blockquote {
+    margin: 1.4rem 0;
+    padding: 1rem 0.8rem 1rem 2.8rem;
+    font-size: 0.92rem;
+  }
+
+  .stats-grid,
+  .skills-grid {
+    gap: 0.75rem;
+  }
+
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .skill-card {
+    padding: 1.15rem;
+  }
+
+  .qualification-tabs {
+    margin-bottom: 1.2rem;
+  }
+
+  .qualification-tab {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .timeline-panel::before {
+    left: 6px;
+  }
+
+  .timeline-item {
+    padding-left: 22px;
+  }
+
+  .timeline-dot {
+    left: 0;
+  }
+
+  .timeline-item time {
+    padding: 0.42rem 0.68rem;
+    font-size: 0.62rem;
+  }
+
+  .timeline-card {
+    padding: 0.8rem;
+    gap: 0.65rem;
+  }
+
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .timeline-card h3 {
+    font-size: 0.84rem;
+    line-height: 1.25;
+  }
+
+  .timeline-card p,
+  .timeline-card small {
+    font-size: 0.68rem;
+    line-height: 1.45;
+  }
+
+  .status {
+    font-size: 0.58rem;
+  }
+
+  .project-swiper {
+    padding-bottom: 3.4rem;
+  }
+
+  .project-preview {
+    min-height: 190px;
+  }
+
+  .project-body {
+    padding: 1.05rem;
+  }
+
+  .project-body h3 {
+    font-size: 0.96rem;
+    line-height: 1.3;
+  }
+
+  .project-body p {
+    min-height: 0;
+  }
+
+  .contact-layout {
+    gap: 0.75rem;
+  }
+
+  .contact-card {
+    min-height: 64px;
+  }
+
+  .map-card iframe {
+    height: 190px;
+  }
+
+  .contact-form {
+    padding: 0.8rem;
+    gap: 0.65rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+
+  .footer-grid {
+    gap: 1.6rem;
+  }
+
+  .footer-links {
+    width: 100%;
+  }
+
+  .back-to-top {
+    right: calc(0.75rem + env(safe-area-inset-right));
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 340px) {
+  .section-shell {
+    width: min(100% - 1rem, 1220px);
+  }
+
+  .brand {
+    font-size: 0.66rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 12.7vw, 2.7rem);
+  }
+
+  .hero-meta > div + div {
+    padding-left: 0.65rem;
+  }
+
+  .signal-card-location {
+    right: 0;
   }
 }
 
