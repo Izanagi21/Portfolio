@@ -10,19 +10,32 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="icon" href="assets/images/favicon.ico">
 
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", savedTheme ? savedTheme === "dark" : prefersDark);
+      } catch {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/redesign.css">
 
   <title>Jaymark Talento | Portfolio</title>
 </head>
-<body>
+<body class="portfolio-redesign">
   <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="page-progress" aria-hidden="true"><span id="page-progress-bar"></span></div>
 
   <header class="site-header" id="site-header">
     <nav class="nav-shell" aria-label="Primary navigation">
@@ -63,21 +76,21 @@
 
   <main id="main-content">
     <section class="hero section-shell" id="home">
-      <div class="hero-copy" data-aos="fade-up">
-        <span class="eyebrow-pill">👋 Hi, I’m</span>
-        <h1>Jaymark Talento</h1>
-        <p class="hero-role">IT Student</p>
-        <p class="hero-summary">Building practical, user-friendly solutions through technology and creativity.</p>
+      <div class="hero-copy">
+        <span class="eyebrow-pill"><span class="availability-dot" aria-hidden="true"></span> Available for internship opportunities</span>
+        <h1><span>Jaymark</span> <span class="name-accent">Talento.</span></h1>
+        <p class="hero-role">Frontend + mobile developer in progress.</p>
+        <p class="hero-summary">I’m an IT student from Tagaytay who turns practical ideas into clear, useful digital experiences.</p>
 
         <div class="hero-actions">
           <a class="button button-primary" href="#contact">
             <i data-lucide="send"></i>
-            Message Me
+            Start a conversation
           </a>
 
           <a class="button button-secondary" id="resume-button" href="assets/resume/Talento_Resume.pdf" download="Talento_Resume.pdf">
             <i data-lucide="download"></i>
-            Download Resume
+            Download résumé
           </a>
         </div>
 
@@ -87,17 +100,31 @@
           <a href="#" aria-label="X / Twitter"><i data-lucide="twitter"></i></a>
           <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
         </div>
+
+        <dl class="hero-meta" aria-label="Current focus">
+          <div><dt>Based in</dt><dd>Tagaytay, PH</dd></div>
+          <div><dt>Current focus</dt><dd>Flutter + frontend</dd></div>
+        </dl>
       </div>
 
-      <div class="hero-visual" data-aos="zoom-in" data-aos-delay="120" aria-label="Profile photo area">
-        <span class="decor-dots" aria-hidden="true"></span>
-        <span class="decor-orb decor-orb-one" aria-hidden="true"></span>
-        <span class="decor-orb decor-orb-two" aria-hidden="true"></span>
+      <div class="hero-visual" aria-label="Portrait of Jaymark Talento">
+        <div class="signal-grid" aria-hidden="true"></div>
+        <div class="signal-ring signal-ring-one" aria-hidden="true"></div>
+        <div class="signal-ring signal-ring-two" aria-hidden="true"></div>
         <div class="portrait-blob">
           <div class="profile-photo-slot" id="profile-photo-slot">
             <img src="assets/images/profile-photo.png" alt="Portrait of Jaymark Talento" width="1122" height="1402" fetchpriority="high">
           </div>
         </div>
+        <div class="signal-card signal-card-status">
+          <span class="availability-dot" aria-hidden="true"></span>
+          <div><small>Status</small><strong>Ready to build</strong></div>
+        </div>
+        <div class="signal-card signal-card-location">
+          <i data-lucide="map-pin"></i>
+          <div><small>Signal origin</small><strong>14.1° N · Tagaytay</strong></div>
+        </div>
+        <span class="visual-index" aria-hidden="true">JT / 26</span>
       </div>
 
       <a class="scroll-cue" href="#about">
@@ -107,18 +134,24 @@
     </section>
 
     <section class="content-section section-shell about-section" id="about">
-      <div class="about-art" data-aos="fade-right" aria-hidden="true">
-        <span class="about-orb about-orb-a"></span>
-        <span class="about-orb about-orb-b"></span>
-        <div class="laptop">
-          <div class="laptop-screen">
-            <i data-lucide="code-2"></i>
+      <div class="about-art" data-aos="fade-right" aria-label="A code window describing Jaymark's approach">
+        <div class="build-window">
+          <div class="build-window-bar">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>jaymark / approach.js</span>
+            <span>01</span>
           </div>
-          <div class="laptop-base"></div>
+          <div class="code-lines" aria-hidden="true">
+            <p><span class="code-key">const</span> developer = {</p>
+            <p><span>location:</span> <b>"Tagaytay"</b>,</p>
+            <p><span>craft:</span> [<b>"web"</b>, <b>"mobile"</b>],</p>
+            <p><span>method:</span> <b>"learn → build → refine"</b>,</p>
+            <p><span>available:</span> <em>true</em></p>
+            <p>};</p>
+          </div>
+          <div class="build-window-footer"><span>BUILD PASSED</span><span>00:01.26</span></div>
         </div>
-        <span class="floating-card floating-card-one"><i data-lucide="braces"></i></span>
-        <span class="floating-card floating-card-two"><i data-lucide="database"></i></span>
-        <span class="floating-card floating-card-three"><i data-lucide="cpu"></i></span>
+        <span class="code-stamp" aria-hidden="true">IDEA → INTERFACE</span>
       </div>
 
       <div class="about-copy" data-aos="fade-left">
@@ -126,11 +159,11 @@
           <span>About Me</span>
           <h2>About Me</h2>
         </div>
-        <p>Motivated and dedicated BSIT student at City College of Tagaytay. I strive to become a Frontend Developer and Mobile App Developer.</p>
+        <p>I’m a BSIT student at City College of Tagaytay, growing toward a career in frontend and mobile development. I enjoy turning a rough idea into an interface people can understand without instructions.</p>
 
         <blockquote>
           <i data-lucide="quote"></i>
-          <p>Turning ideas into meaningful digital experiences, one line of code at a time.</p>
+          <p>Useful first. Clear second. Memorable when it matters.</p>
         </blockquote>
 
         <div class="stats-grid" aria-label="Portfolio statistics">
@@ -464,5 +497,6 @@
   <script src="js/skillsBar.js"></script>
   <script src="js/carousel.js"></script>
   <script src="js/contactForm.js"></script>
+  <script src="js/motion.js"></script>
 </body>
 </html>

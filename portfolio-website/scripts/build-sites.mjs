@@ -8,6 +8,7 @@ const outputRoot = resolve(projectRoot, "dist");
 const sourceFiles = [
   ["index.html", "text/html; charset=utf-8"],
   ["css/style.css", "text/css; charset=utf-8"],
+  ["css/redesign.css", "text/css; charset=utf-8"],
   ["css/tailwind.css", "text/css; charset=utf-8"],
   ["js/main.js", "text/javascript; charset=utf-8"],
   ["js/darkmode.js", "text/javascript; charset=utf-8"],
@@ -16,6 +17,7 @@ const sourceFiles = [
   ["js/skillsBar.js", "text/javascript; charset=utf-8"],
   ["js/carousel.js", "text/javascript; charset=utf-8"],
   ["js/contactForm.js", "text/javascript; charset=utf-8"],
+  ["js/motion.js", "text/javascript; charset=utf-8"],
   ["assets/images/favicon.ico", "image/x-icon"],
   ["assets/images/profile-photo.png", "image/png"],
   ["assets/images/projects/rentags.png", "image/png"],
