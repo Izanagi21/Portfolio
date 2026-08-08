@@ -4,36 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Jaymark Talento — IT student focused on frontend and mobile app development.">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#050615">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="icon" href="assets/images/favicon.ico">
 
-  <script>
-    (() => {
-      try {
-        const savedTheme = localStorage.getItem("portfolio-theme");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.classList.toggle("dark", savedTheme ? savedTheme === "dark" : prefersDark);
-      } catch {}
-    })();
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Oxanium:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.16.0/devicon.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/redesign.css">
+  <link rel="stylesheet" href="css/digital-matrix.css">
+  <link rel="stylesheet" href="css/responsive.css">
 
   <title>Jaymark Talento | Portfolio</title>
 </head>
 <body class="portfolio-redesign">
   <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="boot-sequence" id="boot-sequence" aria-hidden="true">
+    <div class="boot-terminal">
+      <span class="boot-kicker">SPECTRAL INTERFACE // JT-01</span>
+      <strong>CALIBRATING HOLOGRAM</strong>
+      <div class="boot-log"><span id="boot-log">Aligning light field...</span><b id="boot-percent">00%</b></div>
+      <div class="boot-track"><span id="boot-track"></span></div>
+    </div>
+  </div>
+
+  <canvas class="matrix-rain" id="matrix-rain" aria-hidden="true"></canvas>
+  <div class="screen-fx" aria-hidden="true"></div>
 
   <div class="page-progress" aria-hidden="true"><span id="page-progress-bar"></span></div>
 
@@ -41,8 +45,10 @@
     <nav class="nav-shell" aria-label="Primary navigation">
       <a class="brand" href="#home" aria-label="Jaymark Talento home">
         <span class="brand-mark" aria-hidden="true">JT</span>
-        <span>Jaymark Talento</span>
+        <span>JAYMARK / DIGITAL CRAFT</span>
       </a>
+
+      <span class="nav-protocol" aria-hidden="true">SPECTRAL LINK // ONLINE</span>
 
       <div class="desktop-nav" id="desktop-nav">
         <a class="nav-link active" href="#home">Home</a>
@@ -54,9 +60,8 @@
       </div>
 
       <div class="nav-actions">
-        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
-          <i data-lucide="sun" class="theme-icon theme-icon-light"></i>
-          <i data-lucide="moon" class="theme-icon theme-icon-dark"></i>
+        <button class="icon-button effect-toggle" id="effect-toggle" type="button" aria-label="Pause particle animation" aria-pressed="false">
+          <i data-lucide="activity"></i>
         </button>
         <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
           <i data-lucide="menu"></i>
@@ -74,12 +79,19 @@
     </div>
   </header>
 
+  <div class="system-readout" aria-hidden="true">
+    <span><i></i> LIGHT FIELD STABLE</span>
+    <span>TAGAYTAY / PH</span>
+    <span id="system-clock">00:00:00 PHT</span>
+  </div>
+
   <main id="main-content">
     <section class="hero section-shell" id="home">
       <div class="hero-copy">
-        <span class="eyebrow-pill"><span class="availability-dot" aria-hidden="true"></span> Available for internship opportunities</span>
-        <h1><span>Jaymark</span> <span class="name-accent">Talento.</span></h1>
-        <p class="hero-role">Frontend + mobile developer in progress.</p>
+        <span class="eyebrow-pill"><span class="availability-dot" aria-hidden="true"></span> STATUS: AVAILABLE FOR INTERNSHIP</span>
+        <p class="hero-command" aria-hidden="true"><span>IDENTITY SIGNAL</span> / Jaymark Talento</p>
+        <h1 aria-label="Jaymark Talento"><span aria-hidden="true" data-text="JAYMARK">JAYMARK</span> <span class="name-accent" aria-hidden="true" data-text="TALENTO">TALENTO</span></h1>
+        <p class="hero-role" data-type-text="Frontend developer // Mobile builder // IT student">Frontend developer // Mobile builder // IT student</p>
         <p class="hero-summary">I’m an IT student from Tagaytay who turns practical ideas into clear, useful digital experiences.</p>
 
         <div class="hero-actions">
@@ -108,6 +120,7 @@
       </div>
 
       <div class="hero-visual" aria-label="Portrait of Jaymark Talento">
+        <div class="visual-terminal-label"><span>HOLOGRAPHIC IDENTITY</span><b>LIVE SIGNAL</b></div>
         <div class="signal-grid" aria-hidden="true"></div>
         <div class="signal-ring signal-ring-one" aria-hidden="true"></div>
         <div class="signal-ring signal-ring-two" aria-hidden="true"></div>
@@ -124,7 +137,7 @@
           <i data-lucide="map-pin"></i>
           <div><small>Signal origin</small><strong>14.1° N · Tagaytay</strong></div>
         </div>
-        <span class="visual-index" aria-hidden="true">JT / 26</span>
+        <span class="visual-index" aria-hidden="true">SPECTRAL PROFILE // JT-01</span>
       </div>
 
       <a class="scroll-cue" href="#about">
@@ -491,12 +504,12 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/darkmode.js"></script>
   <script src="js/scrollReveal.js"></script>
   <script src="js/counter.js"></script>
   <script src="js/skillsBar.js"></script>
   <script src="js/carousel.js"></script>
   <script src="js/contactForm.js"></script>
   <script src="js/motion.js"></script>
+  <script src="js/matrix.js"></script>
 </body>
 </html>

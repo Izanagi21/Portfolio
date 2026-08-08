@@ -82,7 +82,7 @@
   });
 
   const updateScrollState = () => {
-    const scrollPosition = window.scrollY + 150;
+    const scrollPosition = window.scrollY + Math.min(280, window.innerHeight * 0.32);
     header?.classList.toggle("scrolled", window.scrollY > 20);
     backToTop?.classList.toggle("visible", window.scrollY > 650);
 
