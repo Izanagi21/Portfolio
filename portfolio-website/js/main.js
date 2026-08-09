@@ -59,7 +59,6 @@
   document.querySelectorAll('a[href="#"]:not(#resume-button)').forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      showToast("Add your profile or project link here.");
     });
   });
 

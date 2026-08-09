@@ -794,7 +794,7 @@ blockquote svg { left: 1.1rem; color: var(--holo-cyan); }
 .qualification-tabs { width: fit-content; padding: 4px; border: 1px solid var(--holo-line); border-radius: 14px; background: rgba(4, 6, 20, 0.55); }
 .qualification-tab { padding: 0.72rem 1.1rem; border-radius: 10px; color: var(--holo-muted); font-family: var(--mono-font); font-size: 0.63rem; text-transform: uppercase; }
 .qualification-tab.active { color: var(--holo-void); background: linear-gradient(115deg, var(--holo-cyan), #c2a6ff); box-shadow: 0 8px 24px rgba(98, 246, 255, 0.12); }
-.timeline-panel { max-width: 980px; }
+.timeline-panel { width: 100%; max-width: 980px; margin-inline: auto; }
 .timeline-panel::before { left: 146px; width: 1px; background: linear-gradient(var(--holo-cyan), var(--holo-violet), transparent); }
 .timeline-item { grid-template-columns: 120px minmax(0, 1fr); gap: 2.5rem; }
 .timeline-item time { color: var(--holo-cyan); font-family: var(--mono-font); font-size: 0.59rem; letter-spacing: 0.04em; }
