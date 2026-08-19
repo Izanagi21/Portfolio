@@ -1,0 +1,5 @@
+.git
+.portfolio-website-git-backup
+.pnpm-store
+portfolio-website/node_modules
+portfolio-website/dist
